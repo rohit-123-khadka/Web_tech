@@ -8,13 +8,8 @@ import Services from "./pages/Services";
 import Footer from "./components/Footer";
 import Apply from "./pages/Apply";
 import Programs from "./pages/Programs";
-import Bit from "./pages/Bit";
-import Bba from "./pages/Bba";
-import Bhm from "./pages/Bhm";
-import Bcs from "./pages/Bcs";
-import Mba from "./pages/Mba";
-import Mcs from "./pages/Mcs";
-import Mbahm from "./pages/Mbahm";
+import ProgramPage from "./pages/ProgramPage";
+
 
 function App() {
   return (
@@ -28,13 +23,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/apply" element={<Apply />} />
         <Route path="/programs" element={<Programs />} />
-        <Route path="/bit" element={<Bit />} />
-        <Route path="/bba" element={<Bba />} />
-        <Route path="/bhm" element={<Bhm />} />
-        <Route path="/bcs" element={<Bcs />} />
-        <Route path="/mba" element={<Mba />} />
-        <Route path="/mcs" element={<Mcs />} />
-        <Route path="/mbahm" element={<Mbahm />} />
+         <Route path="/programs/:id" element={<ProgramPage />} />
       </Routes>
       <Footer />
     </>
