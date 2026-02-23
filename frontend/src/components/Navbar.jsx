@@ -48,7 +48,10 @@ function Navbar() {
       >
         {/* Top Contact Bar */}
         <div className="hidden md:flex bg-gray-900 text-white text-sm py-2 px-6 items-center gap-3">
-          <a href={`tel:${landlineNumber}`} className="flex items-center gap-2 hover:text-gray-300">
+          <a
+            href={`tel:${landlineNumber}`}
+            className="flex items-center gap-2 hover:text-gray-300"
+          >
             <FaPhone size={16} /> {landlineNumber}
           </a>
           <a href={`tel:${landlineNumber2}`} className="hover:text-gray-300">
@@ -75,9 +78,10 @@ function Navbar() {
         </div>
 
         {/* Main Navbar */}
-        <div className={`bg-gray-800 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}>
+        <div
+          className={`bg-gray-800 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}
+        >
           <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
-
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(true)}
@@ -97,24 +101,36 @@ function Navbar() {
             </Link>
 
             {/* Desktop Menu */}
-            <ul className="hidden lg:flex items-center space-x-6 list-none relative">
+            <ul className="hidden lg:flex items-center space-x-6 list-none relative  ">
               <li>
-                <Link to="/" className="text-white hover:text-gray-300 px-4 py-4">
+                <Link
+                  to="/"
+                  className="text-white hover:text-gray-300 px-4 py-4"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-white hover:text-gray-300 px-4 py-4">
+                <Link
+                  to="/about"
+                  className="text-white hover:text-gray-300 px-4 py-4"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white hover:text-gray-300 px-4 py-4">
+                <Link
+                  to="/services"
+                  className="text-white hover:text-gray-300 px-4 py-4"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-white hover:text-gray-300 px-4 py-4">
+                <Link
+                  to="/contact"
+                  className="text-white hover:text-gray-300 px-4 py-4"
+                >
                   Contact
                 </Link>
               </li>
@@ -125,10 +141,12 @@ function Navbar() {
                 onMouseEnter={() => setOpen(true)}
                 onMouseLeave={() => setOpen(false)}
               >
-                <button className="flex items-center gap-1 text-white px-4 py-2">
-                  Programs
-                  <ChevronDown size={18} />
-                </button>
+                <Link to='programs'>
+                  <button className="flex items-center gap-1 text-white px-4 py-2 cursor-pointer ">
+                    Programs
+                    <ChevronDown size={18} />
+                  </button>
+                </Link>
 
                 {open && (
                   <div className="absolute top-10 left-0 bg-white text-black rounded-md shadow-lg w-64">
@@ -161,7 +179,9 @@ function Navbar() {
         {/* Overlay */}
         <div
           className={`lg:hidden fixed inset-0 bg-black transition-opacity duration-300 ${
-            mobileMenuOpen ? "opacity-50 visible" : "opacity-0 invisible pointer-events-none"
+            mobileMenuOpen
+              ? "opacity-50 visible"
+              : "opacity-0 invisible pointer-events-none"
           }`}
           onClick={() => setMobileMenuOpen(false)}
         />
@@ -185,13 +205,39 @@ function Navbar() {
           </div>
 
           <div className="py-4 overflow-y-auto">
-            <Link to="/" className="block px-4 py-3 text-white hover:bg-gray-700" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <Link to="/about" className="block px-4 py-3 text-white hover:bg-gray-700" onClick={() => setMobileMenuOpen(false)}>About</Link>
-            <Link to="/services" className="block px-4 py-3 text-white hover:bg-gray-700" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-            <Link to="/contact" className="block px-4 py-3 text-white hover:bg-gray-700" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+            <Link
+              to="/"
+              className="block px-4 py-3 text-white hover:bg-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className="block px-4 py-3 text-white hover:bg-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              to="/services"
+              className="block px-4 py-3 text-white hover:bg-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link
+              to="/contact"
+              className="block px-4 py-3 text-white hover:bg-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
 
             <div className="border-t border-gray-700 mt-2 pt-2">
-              <div className="px-4 py-2 text-gray-400 font-semibold">Programs</div>
+              <div className="px-4 py-2 text-gray-400 font-semibold">
+                Programs
+              </div>
               {programs.map((program) => (
                 <div
                   key={program.id}

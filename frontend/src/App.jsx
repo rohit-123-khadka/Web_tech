@@ -9,11 +9,13 @@ import Footer from "./components/Footer";
 import Apply from "./pages/Apply";
 import Programs from "./pages/Programs";
 import ProgramPage from "./pages/ProgramPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
   return (
     <>
+    <ScrollToTop/>
       <Navbar />
 
       <Routes>
@@ -23,7 +25,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/apply" element={<Apply />} />
         <Route path="/programs" element={<Programs />} />
-         <Route path="/programs/:id" element={<ProgramPage />} />
+         <Route path="/program/:id" element={<ProgramPage />} />
       </Routes>
       <Footer />
     </>
